@@ -4,6 +4,7 @@ import {Comment} from './models/Comment.model'
 
 export class CommentsController extends BaseController {
     public index(req, res): void {
+        
     }
 
     public create(req, res): void {

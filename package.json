@@ -9,7 +9,7 @@
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
     "migration:generate": "npm run typeorm -- migration:generate --config src/ormconfig.json --connection --name ",
     "migration:run": "npm run typeorm -- migration:run",
-    "start": "nodemon ./src/main.ts",
+    "start": "NODE_ENV=development nodemon ./src/main.ts",
     "lint": "eslint . --ext .ts"
   },
   "repository": {
