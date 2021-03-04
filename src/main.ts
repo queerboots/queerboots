@@ -7,7 +7,7 @@ import {Request, Response} from 'express'
 import {createConnection}  from 'typeorm'
 import 'reflect-metadata'
 /* local imports */
-import {Router}   from './router'
+import routes              from './routes/index.routes'
 
 /* init config */
 import 'dotenv/config'
@@ -44,7 +44,7 @@ createConnection().then(async connection => {
     app.locals.path = (x: string) => process.env.ROOT_URL + x
 
     /* initialize routes */
-    new Router(app)
+    app.use("/", routes)
 
     /* all done! start listening */
     app.listen(+process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}...`))
